@@ -47,7 +47,9 @@ function ThemeHotkey() {
         return
       }
 
-      if (event.key.toLowerCase() !== "d") {
+      // "key" can be undefined for programmatically dispatched events,
+      // so guard with optional chaining before calling toLowerCase().
+      if (event.key?.toLowerCase() !== "d") {
         return
       }
 
